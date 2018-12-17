@@ -11,9 +11,22 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+#CREATE
+Route::get('/user-profile/create', 'CalendarController@addEvent');
+Route::post('/user-profile', 'CalendarController@store');
+
+#READ
+Route::get('/user-profile/', 'CalendarController@index');
+
+
+#TEST
+Route::any('/practice/{n?}', 'GettingStartedController@index');
 
 Route::get('/debug', function () {
 

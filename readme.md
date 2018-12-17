@@ -39,7 +39,7 @@ __Delete__
   + Observe confirmation message
 
 ## Outside resources
-*Your list of outside resources go here*
+https://developers.google.com/calendar/quickstart/php
 
 ## Code style divergences
 *List any divergences from PSR-1/PSR-2 and course guidelines on code style*
