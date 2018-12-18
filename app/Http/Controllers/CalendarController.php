@@ -5,17 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use MaddHatter\LaravelFullcalendar\Calendar;
 use App\Event;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class CalendarController extends Controller
 {
     #READ
-    public function index()
+    public function index(Request $request)
     {
-        $events = Event::orderBy('created_at')->get();
+        $user = $request->user();
+        $events = $user->events()->orderBy('created_at')->get();
 
-        //dd($events);
+
         return view('calendar.userProfile')->with([
             'events' => $events
+        ]);
+    }
+
+    public function showEvent($id)
+    {
+        $event = Event::find($id);
+        return view('calendar.showEvent')->with([
+            'event' => $event
         ]);
     }
 
@@ -27,21 +38,76 @@ class CalendarController extends Controller
 
     public function store(Request $request)
     {
-        /*$startDate = date('Y-m-d', strtotime($request->start_date));
-        $endDate = date('Y-m-d', strtotime($request->end_date));
-    */
+        #VALIDATION NEEDED!
+
+        $startDate = $request->start_date;
+        $phpStartDate = date('Y-m-d', strtotime($startDate));
+        $endDate = $request->start_date;
+        $phpEndDate = date('Y-m-d', strtotime($endDate));
+
+
         $event = new Event();
+        $user_id = Auth::id();
+
         $event->title = $request->title;
         $event->description = $request->description;
-        $event->start_date = $request->start_date;
-        $event->end_date = $request->end_date;
+        $event->start_date = $phpStartDate;
+        $event->end_date = $phpEndDate;
 
-        //dd($request->start_date);
-
-
+        $event->user_id = $user_id;
         $event->save();
 
 
         return redirect('/user-profile');
+    }
+
+    #UPDATE
+    public function edit($id)
+    {
+        $event = Event::find($id);
+
+        return view('calendar.editCalendarEvent')->with([
+            'event' => $event,
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $event = Event::find($id);
+
+        $startDate = $request->start_date;
+        $phpStartDate = date('Y-m-d', strtotime($startDate));
+        $endDate = $request->start_date;
+        $phpEndDate = date('Y-m-d', strtotime($endDate));
+
+        $user_id = Auth::id();
+
+        $event->title = $request->title;
+        $event->description = $request->description;
+        $event->start_date = $phpStartDate;
+        $event->end_date = $phpEndDate;
+
+        $event->user_id = $user_id;
+        $event->save();
+
+        return redirect('/user-profile/'.$id.'/edit')->with([
+            'alert' => 'Your changes were saved.'
+        ]);
+    }
+
+    #DELETE
+    public function delete($id)
+    {
+        $event = Event::find($id);
+        if (!$event) {
+            return redirect('/user-profile')->with([
+                'alert' => 'Event not found.'
+            ]);
+        }
+        else{
+            return view('calendar.delete')->with([
+                'event' => $event
+            ]);
+        }
     }
 }

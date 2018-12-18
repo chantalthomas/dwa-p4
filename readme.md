@@ -40,6 +40,7 @@ __Delete__
 
 ## Outside resources
 https://developers.google.com/calendar/quickstart/php
+[Getting the user id](https://stackoverflow.com/questions/17835886/laravel-authuser-id-trying-to-get-a-property-of-a-non-object)
 
 ## Code style divergences
 *List any divergences from PSR-1/PSR-2 and course guidelines on code style*

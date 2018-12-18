@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 
 class GettingStartedController extends Controller
 {
+    public function  practice3()
+    {
+
+    }
     public function practice2()
     {
         $event = new Event();

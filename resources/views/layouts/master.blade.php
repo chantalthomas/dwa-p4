@@ -21,7 +21,7 @@
 <body>
 
 <header>
-
+    @include('modules.nav')
 </header>
 
 <section>

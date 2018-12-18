@@ -2,6 +2,21 @@
 
 return [
 
+    # Guest navigation links
+    'nav' => [
+        '/register' => 'Register',
+        '/login' => 'Login',
+        '/contact' => 'Contact',
+    ],
+
+    # Logged-in user navigation links
+    'nav1' => [
+        '/' => 'Home',
+        'user-profile' => 'My Schedule',
+        'user-profile/create' => 'Add Event',
+        '/contact' => 'Contact',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -13,7 +28,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Schedule That'),
+    'name' => 'Schedule That',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,6 +177,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -175,7 +191,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
-        Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
     ],
 
     /*
@@ -225,7 +241,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
-        'GoogleCalendar' => Spatie\GoogleCalendar\GoogleCalendarFacade::class,
+
     ],
 
 ];

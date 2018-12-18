@@ -17,39 +17,36 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-#CREATE
-Route::get('/user-profile/create', 'CalendarController@addEvent');
-Route::post('/user-profile', 'CalendarController@store');
+#Only Logged in user have access to these routes
+Route::group(['middleware' => 'auth'], function () {
+    #CREATE
+    Route::get('/user-profile/create', 'CalendarController@addEvent');
+    Route::post('/user-profile', 'CalendarController@store');
 
 #READ
-Route::get('/user-profile/', 'CalendarController@index');
+    Route::get('/user-profile/', 'CalendarController@index');
+    Route::get('/user-profile/{id}', 'CalendarController@showEvent');
+});
 
+#UPDATE
+Route::get('/user-profile/{id}/edit', 'CalendarController@edit');
+Route::put('/user-profile/{id}', 'CalendarController@update');
 
 #TEST
 Route::any('/practice/{n?}', 'GettingStartedController@index');
 
-Route::get('/debug', function () {
 
-    $debug = [
-        'Environment' => App::environment(),
-    ];
+#Authentication
+Auth::routes();
 
-    /*
-    The following commented out line will print your MySQL credentials.
-    Uncomment this line only if you're facing difficulties connecting to the
-    database and you need to confirm your credentials. When you're done
-    debugging, comment it back out so you don't accidentally leave it
-    running on your production server, making your credentials public.
-    */
-    #$debug['MySQL connection config'] = config('database.connections.mysql');
+Route::get('/show-login-status', function () {
+    $user = Auth::user();
 
-    try {
-        $databases = DB::select('SHOW DATABASES;');
-        $debug['Database connection test'] = 'PASSED';
-        $debug['Databases'] = array_column($databases, 'Database');
-    } catch (Exception $e) {
-        $debug['Database connection test'] = 'FAILED: '.$e->getMessage();
+    if ($user) {
+        dump('You are logged in.', $user->toArray());
+    } else {
+        dump('You are not logged in.');
     }
 
-    dump($debug);
+    return;
 });

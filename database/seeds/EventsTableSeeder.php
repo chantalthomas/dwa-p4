@@ -31,7 +31,7 @@ class EventsTableSeeder extends Seeder
             $event->description = $eventData[1];
             $event->start_date = $eventData[2];
             $event->end_date = $eventData[3];
-
+            $event->user_id = 1;
             $event->save();
 
             $count--;

@@ -1,0 +1,144 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1,
+nav,
+legend,
+.submitButton {
+    font-family: 'Playfair Display', serif;
+}
+
+section {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.outputContainer {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+.error {
+    color: #e60000;
+}
+
+/*----------------------------------------------------
+Nav bar
+-----------------------------------------------------*/
+nav {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+}
+
+nav ul li a:link {
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #e67300;
+}
+
+/*----------------------------------------------------
+Caloric Intake Form
+-----------------------------------------------------*/
+/*Dropdown styling; the custom dropdown  did not pass the html validator leaving this here to work on this post grading
+select {
+    font-family: 'Playfair Display', serif;
+    font-weight: 200;
+    padding: 8px 24px 8px 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: #e6e6e6;
+    width: auto;
+    max-width: 100%;
+    border-radius: 2px;
+
+}
+
+.dropdown {
+    position: relative;
+    background-color: #e6e6e6;
+    width: auto;
+    max-width: 100%;
+    border-radius: 2px;
+}
+
+select {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
+    max-width: 100%;
+    padding: 8px 24px 8px 10px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select:active,
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.dropdown:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    right: 8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #aaa;
+}
+*/
+.submitButton {
+    border-color: #ffa366;
+    box-shadow: 0 0 40px 40px #ffa366 inset, 0 0 0 0 #ffa366;
+    transition: all 150ms ease-in-out;
+    border-radius: 2px;
+    padding: 1rem;
+}
+
+.submitButton:hover {
+    box-shadow: 0 0 10px 0 #ffa366 inset, 0 0 10px 4px #ffa366;
+}
+
