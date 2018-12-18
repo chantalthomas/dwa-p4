@@ -32,6 +32,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/user-profile/{id}/edit', 'CalendarController@edit');
 Route::put('/user-profile/{id}', 'CalendarController@update');
 
+#DELETE
+Route::get('/user-profile/{id}/delete', 'CalendarController@delete');
+Route::delete('/user-profile/{id}', 'CalendarController@destroy');
+
 #TEST
 Route::any('/practice/{n?}', 'GettingStartedController@index');
 

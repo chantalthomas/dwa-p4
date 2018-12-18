@@ -105,9 +105,19 @@ class CalendarController extends Controller
             ]);
         }
         else{
-            return view('calendar.delete')->with([
+            return view('calendar.deleteCalendarEvent')->with([
                 'event' => $event
             ]);
         }
+    }
+
+    public function destroy($id)
+    {
+        $event = Event::find($id);
+        $event->delete();
+
+        return redirect('/user-profile')->with([
+            'alert' => '"' . $event->totle . '" was removed.'
+        ]);
     }
 }

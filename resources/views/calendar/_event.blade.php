@@ -7,7 +7,7 @@
         <ul class='crudList'>
             <li><a href="/user-profile/{{ $event->id }}">View</a></li>
             <li><a href="/user-profile/{{ $event->id }}/edit" class="btn btn-default">Edit</a></li>
-            <li><a href="#" class="btn btn-default">Delete</a></li>
+            <li><a href="/user-profile/{{ $event->id }}/delete" class="btn btn-default">Delete</a></li>
         </ul>
     </div>
 
