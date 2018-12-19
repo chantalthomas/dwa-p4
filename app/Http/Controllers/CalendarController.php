@@ -39,6 +39,12 @@ class CalendarController extends Controller
     public function store(Request $request)
     {
         #VALIDATION NEEDED!
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
 
         $startDate = $request->start_date;
         $phpStartDate = date('Y-m-d', strtotime($startDate));
