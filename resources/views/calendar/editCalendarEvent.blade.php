@@ -3,7 +3,7 @@
 @section('content')
     <h1>{{config('app.name')}}</h1>
 
-    <h2>Add New Calender Event!</h2>
+    <h2>Edit Calender Event!</h2>
 
     <form method='POST' action='/user-profile/{{ $event->id }}' class="calendarEventContainer">
         <div class='createNewEventContainer>'>
@@ -23,7 +23,7 @@
             <input type='date' name='endDate' id='endDate' value='{{ old('endDate', $event->end_date) }}'>
             @include('modules.field-error', ['field' => 'endDate'])
 
-            <input type="submit" class='postPhoto' name='postPhoto' value='Adding Something New'>
+            <input type="submit" class='addEvent' name='addEvent' value='Adding Something New'>
         </div>
     </form>
 
@@ -32,5 +32,4 @@
             Please correct the errors above.
         </ul>
     @endif
-
 @endsection

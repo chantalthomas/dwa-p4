@@ -13,7 +13,6 @@
         <label for='email'>E-Mail Address</label>
         <input class='row2col1' id='email' type='email' name='email' value='{{ old('email') }}' required autofocus>
 
-
         <label for='password'>Password</label>
         <input class='row2col2' id='password' type='password' name='password' required>
 

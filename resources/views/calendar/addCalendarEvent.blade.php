@@ -19,7 +19,7 @@
             <input type='date' name='endDate' id='endDate' value='{{ old('endDate') }}'>
             @include('modules.field-error', ['field' => 'startDate'])
 
-            <input type="submit" class='postPhoto' name='postPhoto' value='Adding Something New'>
+            <input type="submit" class='addEvent' name='addEvent' value='Adding Something New'>
         </div>
     </form>
 

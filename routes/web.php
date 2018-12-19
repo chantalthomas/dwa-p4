@@ -43,6 +43,7 @@ Route::any('/practice/{n?}', 'GettingStartedController@index');
 #Authentication
 Auth::routes();
 
+
 Route::get('/show-login-status', function () {
     $user = Auth::user();
 

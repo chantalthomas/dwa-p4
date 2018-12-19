@@ -42,8 +42,6 @@ class CalendarController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
         ]);
 
         $startDate = $request->start_date;
@@ -51,6 +49,7 @@ class CalendarController extends Controller
         $endDate = $request->start_date;
         $phpEndDate = date('Y-m-d', strtotime($endDate));
 
+        //dd($startDate);
 
         $event = new Event();
         $user_id = Auth::id();
@@ -79,6 +78,7 @@ class CalendarController extends Controller
 
     public function update(Request $request, $id)
     {
+    //dd($request);
         #VALIDATION NEEDED!
         $request->validate([
             'title' => 'required',
@@ -102,7 +102,8 @@ class CalendarController extends Controller
         $event->end_date = $phpEndDate;
 
         $event->user_id = $user_id;
-        $event->save();
+        dd($startDate);
+        //$event->save();
 
         return redirect('/user-profile/'.$id.'/edit')->with([
             'alert' => 'Your changes were saved.'
