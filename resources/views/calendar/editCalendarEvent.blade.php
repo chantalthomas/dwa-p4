@@ -1,9 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>{{config('app.name')}}</h1>
 
-    <h2>Edit Calender Event!</h2>
+    <h3>Edit Calender Event!</h3>
+
+    @if(session('alert'))
+        <div class='alert'>
+            {{ session('alert') }}
+        </div>
+    @endif
 
     <form method='POST' action='/user-profile/{{ $event->id }}' class="calendarEventContainer">
         <div class='createNewEventContainer>'>
@@ -14,7 +19,10 @@
             <input type="text" name="title" id='title' value='{{ old('title', $event->title) }}'>
             @include('modules.field-error', ['field' => 'title'])
 
-            <input type="text" name="description" id='description' value='{{ old('description', $event->description) }}'>
+            <input type="text"
+                   name="description"
+                   id='description'
+                   value='{{ old('description', $event->description) }}'>
             @include('modules.field-error', ['field' => 'description'])
 
             <input type='date' name='startDate' id='startDate' value='{{ old('startDate' ,$event->start_date) }}'>
@@ -23,7 +31,7 @@
             <input type='date' name='endDate' id='endDate' value='{{ old('endDate', $event->end_date) }}'>
             @include('modules.field-error', ['field' => 'endDate'])
 
-            <input type="submit" class='addEvent' name='addEvent' value='Adding Something New'>
+            <input type="submit" class='addEvent' name='addEvent' value='Update Event'>
         </div>
     </form>
 

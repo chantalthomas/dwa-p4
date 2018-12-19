@@ -3,47 +3,46 @@
 + Production URL: <http://p4.yourdomain.com>
 
 ## Database
-*The following is example info taken from Foobooks; delete and replace with your own info.*
 
 Primary tables:
-  + `books`
-  + `authors`
-  + `tags`
+  + `events`
   + `users`
   
 Pivot table(s):
-  + `book_tag`
+  + 
 
 
 ## CRUD
 *Describe what action I need take in order to see an example of all 4 CRUD operations in your app. I've filled this out with examples from the Foobooks app - delete this and replace with your own info. If one operation is performed multiple times (e.g. Read), you only need to provide 1 example.*
 
 __Create__
-  + Visit <http://p4.foobooks.me/books/create>
+  + Visit <http://dwa-p4.loc/user-profile/create>
   + Fill out form
-  + Click *Add new book*
+  + Click *Add Something New*
   + Observe confirmation message
   
 __Read__
-  + Visit <http://p4.foobooks.me/books> see a listing of all books
+  + Visit <http://dwa-p4.loc/user-profile> to see a listing of all the user's events
   
 __Update__
-  + Visit <http://p4.foobooks.me/books>; choose the Edit button next to one of the books
+  + Visit <<http://dwa-p4.loc/user-profile> choose the Edit button under to one of the event listings
   + Make some edit to form
-  + Click *Save changes*
+  + Click *Update Event*
   + Observe confirmation message
   
 __Delete__
-  + Visit <http://p4.foobooks.me/books>; choose the Delete button next to one of the books
+  + Visit <http://dwa-p4.loc/user-profile> 
+  + Click the Delete button next to one of the event listings
   + Confirm deletion
   + Observe confirmation message
 
 ## Outside resources
-https://developers.google.com/calendar/quickstart/php
-[Getting the user id](https://stackoverflow.com/questions/17835886/laravel-authuser-id-trying-to-get-a-property-of-a-non-object)
++ [Header Font](https://fonts.google.com/specimen/Playfair+Display?selection.family=Playfair+Display)
++ [Body Font](https://fonts.google.com/specimen/Playfair+Display?selection.family=Playfair+Display)
++ [Getting the user id](https://stackoverflow.com/questions/17835886/laravel-authuser-id-trying-to-get-a-property-of-a-non-object)
 
 ## Code style divergences
-*List any divergences from PSR-1/PSR-2 and course guidelines on code style*
++ N/A
 
 ## Notes for instructor
-*Any notes for me to refer to while grading; if none, omit this section*
++ I am ran into some issues with using a calendar package early and tried resolving those issues for far too long unfortunately. sI definitely bit off more than I could chew at my currently skill level! But once grades are in I plan to tackle getting the  MaddHatter LaravelFullcalendar psckage fully embedded in my application so that the user events appear on a calendar instead of in a list. 

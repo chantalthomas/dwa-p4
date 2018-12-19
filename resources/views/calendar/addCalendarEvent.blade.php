@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Add New Calender Event!</h2>
+    <h3>Add New Calender Event!</h3>
 
     <form method='POST' action='/user-profile' class="calendarEventContainer">
         <div class='createNewEventContainer>'>

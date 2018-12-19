@@ -18,7 +18,8 @@ class CalendarController extends Controller
 
 
         return view('calendar.userProfile')->with([
-            'events' => $events
+            'events' => $events,
+            'user' => $user
         ]);
     }
 
@@ -44,9 +45,9 @@ class CalendarController extends Controller
             'description' => 'required',
         ]);
 
-        $startDate = $request->start_date;
+        $startDate = $request->startDate;
         $phpStartDate = date('Y-m-d', strtotime($startDate));
-        $endDate = $request->start_date;
+        $endDate = $request->endDate;
         $phpEndDate = date('Y-m-d', strtotime($endDate));
 
         //dd($startDate);
@@ -63,7 +64,9 @@ class CalendarController extends Controller
         $event->save();
 
 
-        return redirect('/user-profile');
+        return redirect('/user-profile')->with([
+            'alert' => 'A new event was added to your schedule'
+        ]);
     }
 
     #UPDATE
@@ -83,15 +86,13 @@ class CalendarController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
         ]);
 
         $event = Event::find($id);
 
-        $startDate = $request->start_date;
+        $startDate = $request->startDate;
         $phpStartDate = date('Y-m-d', strtotime($startDate));
-        $endDate = $request->start_date;
+        $endDate = $request->endDate;
         $phpEndDate = date('Y-m-d', strtotime($endDate));
 
         $user_id = Auth::id();
@@ -102,8 +103,8 @@ class CalendarController extends Controller
         $event->end_date = $phpEndDate;
 
         $event->user_id = $user_id;
-        dd($startDate);
-        //$event->save();
+        //dd($startDate);
+        $event->save();
 
         return redirect('/user-profile/'.$id.'/edit')->with([
             'alert' => 'Your changes were saved.'
