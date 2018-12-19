@@ -86,7 +86,7 @@ class CalendarController extends Controller
             'start_date' => 'required',
             'end_date' => 'required',
         ]);
-        
+
         $event = Event::find($id);
 
         $startDate = $request->start_date;

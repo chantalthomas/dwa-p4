@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>{{config('app.name')}}</h1>
 
     <h2>Add New Calender Event!</h2>
 
