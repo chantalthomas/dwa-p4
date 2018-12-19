@@ -9,8 +9,13 @@
         {{ csrf_field() }}
 
         <div class='row2col1'>
-            <label for='name'>Name</label><br>
-            <input id='name' type='text' name='name' value='{{ old('name') }}' required autofocus>
+            <label for='firstName'>First Name</label><br>
+            <input id='firstName' type='text' name='firstName' value='{{ old('first_name') }}' required autofocus>
+        </div>
+
+        <div class='row2col2'>
+            <label for='lastName'>Last Name</label><br>
+            <input id='lastName' type='text' name='lastName' value='{{ old('last_name') }}' required autofocus>
         </div>
 
         <div class='row3col1'>
