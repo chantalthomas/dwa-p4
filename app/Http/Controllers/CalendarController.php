@@ -68,7 +68,7 @@ class CalendarController extends Controller
     }
 
     #UPDATE
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $event = Event::find($id);
 
@@ -79,6 +79,14 @@ class CalendarController extends Controller
 
     public function update(Request $request, $id)
     {
+        #VALIDATION NEEDED!
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ]);
+        
         $event = Event::find($id);
 
         $startDate = $request->start_date;

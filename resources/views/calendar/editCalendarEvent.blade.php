@@ -12,10 +12,25 @@
             {{ csrf_field() }}
 
             <input type="text" name="title" id='title' value='{{ old('title', $event->title) }}'>
+            @include('modules.field-error', ['field' => 'title'])
+
             <input type="text" name="description" id='description' value='{{ old('description', $event->description) }}'>
+            @include('modules.field-error', ['field' => 'description'])
+
             <input type='date' name='startDate' id='startDate' value='{{ old('startDate' ,$event->start_date) }}'>
+            @include('modules.field-error', ['field' => 'startDate'])
+
             <input type='date' name='endDate' id='endDate' value='{{ old('endDate', $event->end_date) }}'>
+            @include('modules.field-error', ['field' => 'endDate'])
+
             <input type="submit" class='postPhoto' name='postPhoto' value='Adding Something New'>
         </div>
     </form>
+
+    @if(count($errors) > 0)
+        <ul class='alert'>
+            Please correct the errors above.
+        </ul>
+    @endif
+
 @endsection
