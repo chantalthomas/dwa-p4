@@ -18,14 +18,16 @@ class EventStatusTableSeeder extends Seeder
             'Referee Weekly Call' => 'past'
         ];
 
-        foreach ($events as $title => $statuses) {
-            # First get the event
+        #Go through the array of events where title is the key and status is the value
+        foreach ($events as $title => $status) {
+            # Get the event
             $event = Event::where('title', 'like', $title)->first();
 
             #get the status
-            $status = Status::where('name', 'like', $statuses)->first();
+            $eventStatus = Status::where('name', 'like', $status)->first();
 
-            $event->status()->save($status);
+            #Event object invoking  status relationship method and save the particular status to associate the event and status
+            $event->status()->save($eventStatus);
         }
     }
 }

@@ -16,6 +16,7 @@ class CreateEventStatusTable extends Migration
         Schema::create('event_status', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+
             $table->integer('event_id')->unsigned();
             $table->integer('status_id')->unsigned();
 

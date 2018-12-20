@@ -20,6 +20,6 @@ class Event extends Model
 
     public function status()
     {
-        return $this->belongsTo('App\Status');
+        return $this->hasOne('App\Status');
     }
 }
