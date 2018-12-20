@@ -4,12 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Status;
+
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 
 class GettingStartedController extends Controller
 {
+    public function practice4()
+    {
+        $event = Event::where('title', '=', 'Basketball Game')->first();
+
+        dump($event->title);
+        dump($event->status);
+
+    }
+
     public function  practice3()
     {
+        $event = Event::where('title', '=', 'Basketball Game')->first();
+
+        dump($event->toArray());
 
     }
     public function practice2()

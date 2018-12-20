@@ -133,7 +133,7 @@ class CalendarController extends Controller
         $event->delete();
 
         return redirect('/user-profile')->with([
-            'alert' => '"' . $event->totle . '" was removed.'
+            'alert' =>   $event->title.  " was removed."
         ]);
     }
 }

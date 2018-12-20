@@ -1,0 +1,68 @@
+/*----------------------------------------------------
+Events
+-----------------------------------------------------*/
+.eventContainer {
+    display: grid;
+    border: 2px solid black;
+    margin-bottom: 15px;
+}
+
+.eventContainer .row1col1 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.eventContainer .row2col1 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.eventContainer .row3col1 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.eventContainer .row4col1 {
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.eventContainer .row5col1 {
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.eventContainer .crudList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.eventContainer .crudList .row6col1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-self: center;
+    justify-self: end;
+}
+
+.eventContainer .crudList .row6col2 {
+    grid-column-start: 2;
+    grid-column-end:3;
+    justify-self: center;
+    align-self: center;
+}
+
+.eventContainer .crudList .row6col3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    align-self: center;
+    justify-self: start;
+}
+
+.crudList {
+    list-style-type: none;
+}
+
+.crudList li{
+    display: inline-block;
+}
