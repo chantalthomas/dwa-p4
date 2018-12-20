@@ -12,10 +12,13 @@ class GettingStartedController extends Controller
 {
     public function practice4()
     {
-        $event = Event::where('title', '=', 'Basketball Game')->first();
-
-        dump($event->title);
-        dump($event->status);
+        $events = Event::with('status')->get();
+        foreach ($events as $event) {
+            dump($event->title.' is : ');
+            foreach ($event->status as $status) {
+                dump($status->name.' ');
+            }
+        }
 
     }
 

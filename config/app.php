@@ -6,7 +6,6 @@ return [
     'nav' => [
         '/register' => 'Register',
         '/login' => 'Login',
-        '/contact' => 'Contact',
     ],
 
     # Logged-in user navigation links
@@ -14,7 +13,6 @@ return [
         '/' => 'Home',
         'user-profile' => 'My Schedule',
         'user-profile/create' => 'Add Event',
-        '/contact' => 'Contact',
     ],
 
     /*

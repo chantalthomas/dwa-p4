@@ -5,11 +5,12 @@
 ## Database
 
 Primary tables:
-  + `events`
-  + `users`
+  + events
+  + users
+  + statuses
   
 Pivot table(s):
-  + 
+  + event_status
 
 
 ## CRUD
@@ -46,3 +47,7 @@ __Delete__
 
 ## Notes for instructor
 + I am ran into some issues with using a calendar package early and tried resolving those issues for far too long unfortunately. sI definitely bit off more than I could chew at my currently skill level! But once grades are in I plan to tackle getting the  MaddHatter LaravelFullcalendar psckage fully embedded in my application so that the user events appear on a calendar instead of in a list. 
+
++ I am also having some routing issues. For instance if you are currently on the edit page and navigate to the add page, my application goes to"/user-profile/1/user-profile/create" instead of just "user-profile/create" 
+
++ Lastly my pivot table is not implemented correctly. I simply wanted to display the status of the event in the view page for all events that had a status. 

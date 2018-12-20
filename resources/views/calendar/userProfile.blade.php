@@ -10,12 +10,13 @@
     @endif
 
     @if($events->count() == 0)
-        <p> You do not have anything on your plate! Would you like to update your<a href="/user-profile/create" class="btn btn-default">schedule?</a>
+        <p> You do not have anything on your plate! Would you like to update your<a href="/user-profile/create"
+                                                                                    class="btn btn-default">schedule?</a>
     @else
-    <div class='calendarContainer'>
-        @foreach($events as $event)
-            @include('calendar._event')
-        @endforeach
-    </div>
+        <div class='calendarContainer'>
+            @foreach($events as $event)
+                @include('calendar._event')
+            @endforeach
+        </div>
     @endif
 @endsection

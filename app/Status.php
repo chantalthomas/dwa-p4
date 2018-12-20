@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Status extends Model
 {
     public function events() {
-        return $this->hasOn('App\Event');
+        return $this->belongsToMany('App\Event')->withTimestamps();
     }
+
+
 }

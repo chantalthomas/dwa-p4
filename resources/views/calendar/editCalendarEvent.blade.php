@@ -16,19 +16,22 @@
             {{ method_field('put') }}
             {{ csrf_field() }}
 
-            <input type="text" name="title" id='title' value='{{ old('title', $event->title) }}'>
+            Title<input type="text" name="title" id='title' value='{{ old('title', $event->title) }}'>
             @include('modules.field-error', ['field' => 'title'])
 
-            <input type="text"
-                   name="description"
-                   id='description'
-                   value='{{ old('description', $event->description) }}'>
+            Description<input type="text"
+                              name="description"
+                              id='description'
+                              value='{{ old('description', $event->description) }}'>
             @include('modules.field-error', ['field' => 'description'])
 
-            <input type='date' name='startDate' id='startDate' value='{{ old('startDate' ,$event->start_date) }}'>
+            Start Date <input type='date'
+                              name='startDate'
+                              id='startDate'
+                              value='{{ old('startDate' ,$event->start_date) }}'>
             @include('modules.field-error', ['field' => 'startDate'])
 
-            <input type='date' name='endDate' id='endDate' value='{{ old('endDate', $event->end_date) }}'>
+            End Date<input type='date' name='endDate' id='endDate' value='{{ old('endDate', $event->end_date) }}'>
             @include('modules.field-error', ['field' => 'endDate'])
 
             <input type="submit" class='addEvent' name='addEvent' value='Update Event'>

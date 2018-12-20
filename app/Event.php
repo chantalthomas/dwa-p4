@@ -20,6 +20,6 @@ class Event extends Model
 
     public function status()
     {
-        return $this->hasOne('App\Status');
+        return $this->belongsToMany('App\Status')->withTimestamps();
     }
 }
